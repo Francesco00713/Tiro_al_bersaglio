@@ -1,8 +1,6 @@
 let diametro = 400;
 let centroX, centroY;
-let click = {
-    x: null, 
-    y: null};
+let clickX = null, clickY = null;
 
 function setup() {
     createCanvas(1350, 500);
@@ -34,10 +32,10 @@ function draw() {
     fill(248, 243, 43);
     circle(width / 2, height / 2, diametro - 360);
 
-    if (click.x !== null && click.y !== null) {
+    if (clickX !== null && clickY !== null) {
         fill(0, 0, 0);
         strokeWeight(2);
-        circle(click.x, click.y, 8);
+        circle(clickX, clickY, 8);
     }
 }
 
@@ -50,6 +48,6 @@ function mouseClicked() {
     } else {
         footer = document.querySelector("#footer").innerHTML = "HAI MANCATO IL BERSAGLIO!";
     }
-    click.x = mouseX;
-    click.y = mouseY;
+    clickX = mouseX;
+    clickY = mouseY;
   }
